@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/headTag') -%>
+</head>
+
+<body>
+    <%- include('./components/navbar') -%>
+        <div class="body-mid">
+            <div class="container mt-2">
+                <a href="/" class="btn btn-secondary fw-bold ">&larr; Back</a>
+            </div>
+
+            <div class="container mt-5">
+                <div class="container mt-5  text-center text-light fw-50 p-3">
+                    <h1 style="font-weight:bolder; font-size: 45px;">All Transections</h1>
+                </div>
+
+                <table class="table mt-2">
+                    <thead class="bg-black text-light">
+                        <tr>
+                            <th scope="col">Sender</th>
+                            <th scope="col">Reciver</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Remove</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white text-dark">
+                        <% if(data.length>0){%>
+                            <% data.forEach((e) => {%>
+                                <tr>
+                                    <td>
+                                        <%= e.sEmail %>
+                                    </td>
+                                    <td>
+                                        <%= e.rEmail %>
+                                    </td>
+                                    <td>
+                                        <%= e.amount  %>
+                                    </td>
+                                    <td>
+                                        <%= e.date  %>
+                                    </td>
+                                    <td>
+                                        <a href="/remove/<%=e._id %>" class="btn btn-danger">
+                                            <i class="fa fa-close"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+                                <%}) %>
+
+                                    <%}else{%>
+                                        <tr class="bg-warning text-light">
+                                            <td>
+
+                                                No records Found!
+
+                                            </td>
+                                        </tr>
+
+
+                                        <%} %>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <footer class="text-center text-white">
+            <div class="text-center text-dark p-3">
+                <p>© 2020 Copyright: <a href="#">Banker's.com</a></p>
+            </div>
+        </footer>
+
+
+        <!-- - Back to all users -->
+
+        <%- include('./components/bootstrapScript') -%>
+</body>
+
+</html>

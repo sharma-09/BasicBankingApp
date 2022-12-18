@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/headTag') -%>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                user-select: none;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .body-mid {
+                background-image: url("https://global-uploads.webflow.com/61559d56514fd6c31beea3ac/632c3fcbfbc19310e85d9176_632c198774c2d61b8365fdce_iStock-1203763961.webp");
+                height: 1200px;
+                background-size: cover;
+            }
+            
+            .half {
+                padding-top: 150px;
+                padding-bottom: 60px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .body-cont {
+                margin-left: 50px;
+                color: #eb5d1e
+            }
+            
+            .body-cont h2 {
+                font-size: 55px;
+            }
+            
+            .body-cont a {
+                padding: 5px;
+                color: white;
+                border: 2px solid;
+                border-radius: 10px;
+                text-decoration: none;
+                font-size: 22px;
+                font-weight: 560;
+            }
+            
+            .body-cont a:hover {
+                background-color: #eb5d1e;
+                border: 2px solid #eb5d1e;
+                color: white;
+            }
+            
+            .body-cont p {
+                font-size: 20px;
+                color: white;
+            }
+            
+            .img-fluid {
+                font-size: 50px;
+            }
+            
+            .body-img {
+                animation: up-down 2s ease-in-out infinite alternate-reverse both;
+            }
+            
+            @-webkit-keyframes up-down {
+                0% {
+                    transform: translateY(10px);
+                }
+                100% {
+                    transform: translateY(-10px);
+                }
+            }
+            
+            @keyframes up-down {
+                0% {
+                    transform: translateY(10px);
+                }
+                100% {
+                    transform: translateY(-10px);
+                }
+            }
+            
+            .container {
+                width: 100%;
+            }
+            
+            .header {
+                width: 100%;
+                height: 70px;
+                background-color: white;
+                position: fixed;
+                top: 0;
+                display: flex;
+                color: gray;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .header h3 {
+                font-weight: 700;
+            }
+            
+            .header ul {
+                display: flex;
+            }
+            
+            .header ul li {
+                display: flex;
+                padding: 0px 40px 0px 40px;
+                font-size: 20px;
+            }
+            
+            .header ul li a {
+                text-decoration: none;
+                color: gray;
+            }
+            
+            .header ul li a:hover {
+                color: #eb5d1e
+            }
+            
+            .img-fluid {
+                max-height: 700px;
+            }
+            
+            footer {
+                width: 100%;
+            }
+            
+            footer .text-center {
+                height: 150px;
+                background-color: rgba(7, 7, 7, 0.962);
+                ;
+            }
+            
+            footer .text-center p {
+                color: white;
+            }
+            
+            footer .text-center p a {
+                text-decoration: none;
+                color: white;
+            }
+            
+            footer .p-3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .custom_view {
+                display: flex;
+            }
+            
+            .custom_view_left {
+                flex-basis: 50%;
+            }
+            
+            .custom_view_right {
+                flex-basis: 50%;
+            }
+            
+            #recAmountId:in-range {
+                background-color: rgb(255, 255, 255);
+            }
+            
+            #recAmountId:out-of-range {
+                background-color: rgb(255 0 0 / 18%);
+                color: black;
+            }
+            
+            #recAmountId:in-range+label::after {
+                content: "";
+            }
+            
+            #recAmountId:out-of-range+label::after {
+                content: "Please try with lower amount";
+                font-size: 14px;
+                position: relative;
+                color: #f10202;
+                text-shadow: 1px 1px black;
+            }
+            
+            .container {
+                margin-top: 100px;
+            }
+            
+            .form-group label {
+                color: white;
+                font-size: 20px;
+            }
+            
+            .nav-link {
+                margin-right: 20px;
+            }
+        </style>
+</head>
+
+<body>
+    <div class=".container-fluid">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" style="text-decoration: none; color: gray; font-size: 28px; font-weight: bolder;">Banker's Bank</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse flex-grow-0 " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto" style="font-size: 18px;">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="/home" style="text-decoration: none; color: gray; ">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/adduser" style="text-decoration: none; color: gray;">Add Costumer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/data" style="text-decoration: none; color: gray;">view Constumers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/history" style="text-decoration: none; color: gray;">Transfer History</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="body-mid">
+            <div class="container mt-2">
+                <a href="/data" class="btn btn-danger fw-bold " style="margin-top: 50px;">&larr; Back</a>
+            </div>
+
+            <div class="container  text-center p-3 mt-3">
+                <h1 class="text-light" style="font-weight:bolder; font-size: 55px;">Sender Details</h1>
+            </div>
+            <!-- Sender Details -->
+            <div class="container mt-2 custom_view">
+                <div class="container mt-4 custom_view_left text-center">
+                    <i class="far fa-user" style="font-size: 7rem;"></i>
+
+                </div>
+                <div class="container mt-4" style="text-align: center; margin-left: -600px;">
+                    <% data.forEach((e) => {%>
+                        <h4 style="color: white;">Name:
+                            <%= e.name %>
+                        </h4>
+                        <h4 style="color: white;">Email:
+                            <%= e.email %>
+                        </h4>
+                        <h4 style="color: white;">Mobile:
+                            <%= e.contact %>
+                        </h4>
+                        <h4 style="color: white;">Balence:
+                            <%= e.amount %>
+                        </h4>
+
+                        <%}) %>
+                </div>
+
+            </div>
+            <!-- Reciver -->
+            <div class="container bg-black  text-center p-2 mt-3">
+                <h3 class="text-light fw-4">Reciver Details</h3>
+            </div>
+            <div class="container" style="margin-top: -0px;">
+                <form action="/transfer" method="POST">
+                    <div class="form-group mt-3">
+                        <label for="exampleInputEmail1">From</label>
+                        <% data.forEach((e) => {%>
+                            <input type="hidden" name="SenderID" value="<%= e._id %>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="SenderName" placeholder="Enter User Name" readonly value="<%= e.name %>">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="SenderEmail" placeholder="Enter User Name" readonly value="<%= e.email %>">
+
+                            <%}) %>
+
+
+
+                    </div>
+                    <div class="form-group  mt-3">
+                        <label for="exampleInputEmail1">TO</label>
+                        <select class="form-select" name="reciverName">
+              <option selected>Select Reciver Name</option>
+              <% records.forEach((e)=>{%>
+    
+                <option> <%= e.name %></option>
+              <%}) %>
+            
+            </select>
+
+                    </div>
+                    <div class="form-group  mt-3">
+                        <select class="form-select" name="reciverEmail">
+              <option selected>Select Reciver Email</option>
+              <% records.forEach((e)=>{%>
+                <option> <%= e.email %> </option>
+    
+              <%}) %>
+             
+            </select>
+
+                    </div>
+                    <div class="form-group  mt-3">
+                        <label for="exampleInputEmail1">Amount</label>
+
+
+
+                        <input type="Amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="transferAmount" placeholder="Enter Amount" required>
+
+                        <button type="submit" class="btn btn-danger mt-3 text-center">Submit</button>
+                </form>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- - Back to all users -->
+        <footer class="text-center text-white">
+            <div class="text-center text-dark p-3">
+                <p>© 2020 Copyright: <a href="#">Banker's.com</a></p>
+            </div>
+        </footer>
+
+
+
+        <%- include('./components/bootstrapScript') -%>
+    </div>
+</body>
+
+</html>

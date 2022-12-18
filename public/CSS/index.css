@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body-mid {
+    background-image: url("https://global-uploads.webflow.com/61559d56514fd6c31beea3ac/632c3fcbfbc19310e85d9176_632c198774c2d61b8365fdce_iStock-1203763961.webp");
+    height: 1200px;
+    background-size: cover;
+}
+
+.half {
+    padding-top: 150px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.body-cont {
+    margin-left: 50px;
+    color: #eb5d1e
+}
+
+.body-cont h2 {
+    font-size: 55px;
+}
+
+.body-cont a {
+    padding: 5px;
+    color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 560;
+}
+
+.body-cont a:hover {
+    background-color: #eb5d1e;
+    border: 2px solid #eb5d1e;
+    color: white;
+}
+
+.body-cont p {
+    font-size: 20px;
+    color: white;
+}
+
+.img-fluid {
+    font-size: 50px;
+}
+
+.body-img {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+.container {
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    display: flex;
+    color: gray;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h3 {
+    font-weight: 700;
+}
+
+.header ul {
+    display: flex;
+}
+
+.header ul li {
+    display: flex;
+    padding: 0px 40px 0px 40px;
+    font-size: 20px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: gray;
+}
+
+.header ul li a:hover {
+    color: #eb5d1e
+}
+
+.img-fluid {
+    max-height: 700px;
+}
+
+footer {
+    width: 100%;
+}
+
+footer .text-center {
+    height: 150px;
+    background-color: rgba(7, 7, 7, 0.962);
+    ;
+}
+
+footer .text-center p {
+    color: white;
+}
+
+footer .text-center p a {
+    text-decoration: none;
+    color: white;
+}
+
+footer .p-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

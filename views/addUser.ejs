@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/headTag') -%>
+        <link rel="stylesheet" href="./components/add.user.css">
+</head>
+
+<body>
+    <div class="body">{
+        <%- include('./components/navbar') -%>
+            <div class="body-mid">
+                <div class="container mt-2">
+                    <a href="/" class="btn btn-secondary fw-bold ">&larr; Back</a>
+                </div>
+
+                <div class="container mt-5">
+
+                    <!-- - Alert msg -->
+                    <% if(msg !="" ){%>
+                        <div class="alert alert-success text-center " role="alert" id="addMsg">
+
+                            <%=msg %>
+                        </div>
+
+
+                        <%} %>
+
+                            <div class="container mt-2 text-center fw-50 p-2">
+                                <h1 style="font-weight:bolder; font-size: 45px; color: white">Add User Form</h1>
+                            </div>
+                            <form action="/adduser" method="POST">
+                                <div class="form-group mt-3">
+                                    <label for="exampleInputEmail1" style="color: white; font-size: 22px; font-weight: bolder;">Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userName" placeholder="Enter User Name" required>
+
+                                </div>
+                                <div class="form-group  mt-3">
+                                    <label for="exampleInputEmail1" style="color: white; font-size: 22px; font-weight: bolder;">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userEmail" placeholder="Enter User Email">
+
+                                </div>
+                                <div class="form-group  mt-3">
+                                    <label for="exampleInputPassword1" style="color: white; font-size: 22px; font-weight: bolder;">Mobile</label>
+                                    <input type="number" class="form-control" id="exampleInputPassword1" name="userNumber" placeholder="Enter User Contact ">
+
+                                </div>
+                                <div class="form-group  mt-3">
+                                    <label for="exampleInputEmail1" style="color: white; font-size: 22px; font-weight: bolder;">Amount</label>
+                                    <input type="Amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="userAmount" placeholder="Enter Amount">
+
+                                    <button type="submit" class="btn btn-danger mt-3 text-center">Submit</button>
+                            </form>
+                            </div>
+                </div>
+                <%- include('./components/bootstrapScript') -%>
+                    <script>
+                        let alert = document.getElementById('addMsg');
+                        setTimeout(() => {
+                            alert.style.visibility = "hidden"
+                        }, 2000)
+                    </script>
+            </div>
+    </div>
+    <footer class="text-center text-white">
+        <div class="text-center text-dark p-3">
+            <p>© 2020 Copyright: <a href="#">Banker's.com</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
